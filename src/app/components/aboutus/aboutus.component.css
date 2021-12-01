@@ -1,15 +1,18 @@
 p{position:flex;}
 .sm{position: flex;}
-h1{color:white;
+h1{
 position: center;
 margin-left :30%}
-h2{color:white;
+h2{
 position:center;
     margin-left:30%}
-.first{background-color:#673AB7;}
+
 .black{color:white;}
-button{margin-left: 45%;}
+button{margin-left: 50%;}
 .centerd{margin-left:45%
 border=1px solid white;}
 .second{background-color: #673AB7;;
 margin-top:5px }
+img{height:500px;}
+.form{margin-left: 30%;
+width:500px;}

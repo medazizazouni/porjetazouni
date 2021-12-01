@@ -8,30 +8,38 @@
 <mat-card class="second">
     <h1 class="black">envoyer nous un mail:</h1>
    <div class="centerd">
-    <div>
+    
 
-   
-        <mat-form-field>
+   <mat-card class="form">
+    <div>    
+    <mat-form-field appearance="legacy">
           <input type="text" matInput placeholder="nom" formControlName="nom">
         </mat-form-field>
       
 
     
-        <mat-form-field>
+        <mat-form-field  appearance="legacy">
           <input type="text" matInput placeholder="prenom" formControlName="prenom">
         </mat-form-field>
        
       </div>
       <p>
-        <mat-form-field>
+        <mat-form-field appearance="legacy">
           <input type="text" matInput placeholder="adresse email" formControlName="mail">
         </mat-form-field>
        </p>
        <p> 
-        <mat-form-field>
+        <mat-form-field appearance="legacy">
             <input type="text" matInput placeholder="votre message" formControlName="message">
           </mat-form-field>
-       </p>    
-          <button type="submit" mat-raised-button color="primary" margin-left="45%" > envoyer </button>
-   </div>  
+        
+       </p> 
+       <button type="submit" mat-raised-button color="primary" > envoyer </button>
+    </mat-card> 
+    <h2 class="black">notre adresse mail: besttvtn@gmail.com</h2>
+    <h2 class="black">notre numeros de telephone:71123456</h2>
+
+    </div> 
+          
+    
 </mat-card>
