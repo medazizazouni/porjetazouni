@@ -1,0 +1,49 @@
+
+<mat-card class="main">
+  <mat-card>
+  <mat-form-field appearance="legacy">
+    <mat-label>Search</mat-label>
+    <input matInput placeholder="Nom Hotel" [(ngModel)]="search">
+
+  </mat-form-field>
+  </mat-card>
+<div class="d-flex flex-row flex-wrap">
+  <mat-card class="example-card " style="margin: 20px;box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);" *ngFor="let h of hotel |search:search" >
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{h.nom}}</mat-card-title>
+      <mat-card-subtitle>{{h.region}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="h.photo">
+    <mat-card-content>
+      <p>
+        {{h.description}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="navigate(h.id)">voir plus</button>
+    </mat-card-actions>
+  </mat-card>
+<!-- 
+    <mat-card class="example-card article-mat-card " *ngFor="let h of hotel" role="group">
+        
+        <img mat-card-image [src]="h.photo" >
+        <mat-card-content>
+            <ul>
+                <li>region:{{h.region}}</li>
+                <li>nom:{{h.nom}}</li>
+                <li>prix par nuit:{{h.prix}}</li>
+                <li><p *ngIf="h.promotion==true">en promotion</p></li>
+            </ul>
+        </mat-card-content>
+        <mat-card-actions>
+         
+          <button mat-raised-button color="primary" (click)="navigate(h.id)">voir plus</button>
+        </mat-card-actions>
+      </mat-card> -->
+    
+</div>
+
+
+</mat-card>
+

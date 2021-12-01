@@ -1,0 +1,45 @@
+
+<h1>Formulaire de reservation</h1>
+<form  [formGroup]="reservation" (ngSubmit)="onSubmitForm()">
+
+    <p class="auto">
+        nom d'utilisateur: {{nomutil.identifiant}}
+      </p> 
+     <p class="auto">
+        nom de l'hotel: {{nom}}
+    
+     </p>   
+
+   <mat-form-field appearance="fill">
+    <mat-label>date de reservation</mat-label>
+    <input  matInput [matDatepicker]="picker" formControlName="dateDebut">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <p>
+    <mat-form-field>
+      <input type="number" matInput placeholder="nombre de jour" formControlName="nbjour" name='jour' [(ngModel)]='jour' (change)='onChange2($event)'>
+    </mat-form-field>
+  </p>  
+   
+    <p>
+      <mat-form-field>
+        <input type="number" matInput placeholder="nombre d'enfants" formControlName="nbenfant" (change)='onChange($event)' [(ngModel)]='enfant' name='enfant'>
+      </mat-form-field>
+    </p>
+    
+    <p>
+      <mat-form-field>
+        <input type="number" matInput placeholder="nombre d'adultes" formControlName="nbadulte" (change)='onChange1($event)' name='adult' [(ngModel)]='adult'>
+      </mat-form-field>
+    </p>
+
+    <h1 >le prix totale est: {{prix}} TND</h1>
+    
+   
+    
+    <div class="button">
+      <button type="submit" mat-raised-button color="primary" [mat-dialog-close]="true" (click)="openSnackBar()" [disabled]="reservation.invalid" > reserver </button>
+    </div>
+    
+    </form>

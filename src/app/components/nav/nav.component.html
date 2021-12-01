@@ -1,0 +1,31 @@
+
+     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="box-shadow: 10px 10px 5px rgb(247, 233, 233);  ">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Best travel TN</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collaps d-flex" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a mat-button  routerLinkActive="router-link-active"  [routerLink]="['/acceuil']">acceuil </a>
+              </li>
+              <li class="nav-item">
+                <a mat-button  routerLinkActive="router-link-active"  [routerLink]="['/listehotel']">Catalogue </a>
+              </li>
+              <li class="nav-item">
+                <a  mat-button *ngIf="userrole =='owner'" routerLinkActive="router-link-active" [routerLink]="['/servejson']">Server Json</a>
+              </li>
+              <li class="nav-item">
+                <a mat-button  *ngIf="userrole !='user'" routerLinkActive="router-link-active" [routerLink]="['/modifajout']">Modifier/Ajouter</a>
+              </li>
+              <li class="nav-item">
+                <button (click)="logOut()" mat-button style="color: #334D6E;font-size: smaller;">
+                    <i  class="material-icons">logout</i>Logout
+                  </button>
+              </li>
+             
+            </ul>
+          </div>
+        </div>
+      </nav>

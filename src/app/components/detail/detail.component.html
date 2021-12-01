@@ -1,0 +1,57 @@
+ 
+     <div class="container">
+    <mat-card class="main">   
+<mat-card class="detail" style="box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);">
+    <img class="example-header-image" mat-card-image [src]="currentHotel.photo">
+    <mat-accordion>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Hotel Details
+            </mat-panel-title>
+            <mat-panel-description>
+                Hotel Details
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-form-field appearance="legacy">
+            <mat-label>Region</mat-label>
+            <input matInput [value]="currentHotel.region" readonly>
+        
+          </mat-form-field>
+          <mat-form-field appearance="legacy">
+            <mat-label>prix :</mat-label>
+            <input matInput [value]="currentHotel.prix " readonly >
+            <span matSuffix>TND</span>
+          </mat-form-field>
+
+          <mat-form-field appearance="legacy">
+            <mat-label>prix apres promotion:</mat-label>
+            <input matInput [value]="currentHotel.prix | promotion" readonly >
+            <span matSuffix>TND</span>
+          </mat-form-field>
+          <mat-form-field appearance="legacy">
+            <mat-label>prix par nuit le weekend</mat-label>
+            <input matInput [value]="currentHotel.prix |promotion| weekend" readonly >
+            <span matSuffix>TND</span>
+          </mat-form-field>
+        </mat-expansion-panel>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+Description            </mat-panel-title>
+            <mat-panel-description>
+              Hotel Description
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>{{currentHotel.description}}</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    <button mat-raised-button color="primary" (click)="reserver()">faire un reservation</button>
+    
+
+</mat-card>
+</mat-card>
+</div>
+
+ 

@@ -1,0 +1,22 @@
+.dMain{
+    position: center;
+    width: auto;
+    background-color:#673AB7;
+    
+}
+.dNav{
+    background-color:#673AB7;
+    
+
+}
+.dLink{
+    color:white;
+    margin:5px;}
+nav{position: sticky;}    
+
+.router-link-active{
+    color: #673AB7;
+	font-weight: bold;
+    border-radius: 10%;
+    border-color: #673AB7;
+}

@@ -1,0 +1,123 @@
+{
+  "hotel": [
+    {
+      "id": 1,
+      "region": "tunis",
+      "nom": "golden tulip",
+      "prix": 300,
+      "photo": "assets/hotels/goldent.jpg",
+      "promotion": true,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      "id": 2,
+      "region": "tunis",
+      "nom": "sheraton",
+      "prix": 150,
+      "photo": "assets/hotels/sheraton.jpg",
+      "promotion": false,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      "id": 3,
+      "region": "bizerte",
+      "nom": "bizerta resort",
+      "prix": 80,
+      "photo": "assets/hotels/bizertaresort.jpg",
+      "promotion": true,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      "id": 4,
+      "region": "bizerte",
+      "nom": "hotel el nour",
+      "prix": 250,
+      "photo": "assets/hotels/hnour.jpg",
+      "promotion": false,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      "id": 5,
+      "region": "hammamet",
+      "nom": "le royale",
+      "prix": 300,
+      "photo": "assets/hotels/leroyale.jpg",
+      "promotion": true,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      "id": 6,
+      "region": "hammamet",
+      "nom": "hasdrubale",
+      "prix": 300,
+      "photo": "assets/hotels/hasdrubal.jpg",
+      "promotion": false,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      "id": 7,
+      "region": "sfax",
+      "nom": "hotel concorde",
+      "prix": 150,
+      "photo": "assets/hotels/concored.jpg",
+      "promotion": true,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+      "id": 8,
+      "region": "sfax",
+      "nom": "les olivier palace",
+      "prix": 200,
+      "photo": "assets/hotels/olivier.jpg",
+      "promotion": false,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    }
+  ],
+  "utilisateur": [
+    {
+      "identifiant": "owner",
+      "password": "owner",
+      "role": "owner"
+    },
+    {
+      "identifiant": "user",
+      "password": "user",
+      "role": "user"
+    },
+    {
+      "identifiant": "admin",
+      "password": "admin",
+      "role": "admin"
+    }
+  ],
+  "reservation": [
+    {
+      "id": 1,
+      "client": "owner",
+      "hotel": "golden tulip",
+      "DateDebut": "2021/11/11",
+      "nbjour": 2,
+      "nbadult": 0,
+      "nbenfant": 1
+    },
+    {
+      "id": 2,
+      "client": "user",
+      "hotel": "les oliviers palace",
+      "DateDebut": "2022/1/5",
+      "nbjour": 4,
+      "nbadult": 1,
+      "nbenfant": 2
+    },
+    {
+      "id": 3,
+      "client": "admin",
+      "hotel": "le royale",
+      "DateDebut": "2022/01/05",
+      "nbjour": 2,
+      "nbadult": 3,
+      "nbenfant": 3
+    }
+    
+  ]
+}

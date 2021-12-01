@@ -1,0 +1,45 @@
+/* 
+.example-card {
+    width: 300px;
+  } */
+
+  .article-mat-card{position: flex;
+margin:50px;
+
+}
+
+
+p{ 
+    font-weight: bold;
+    }
+    ul {
+        list-style-type: none;
+    }
+    
+    img{
+        border: 1px solid #9599a0;
+        margin: 10px;
+       
+    height: 150px;
+    width: 250px;
+}
+    div{position:flex;
+        /* background-color: #673AB7; */
+        border-radius: 1%;
+}
+   
+ 
+
+mat-raised-button{position: sticky;
+        background-color: #2D1096;
+}
+.example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('./../../../assets/hotel.png');
+    background-size: cover;
+    border-radius: 50%;
+  }
+  .main{background-color:#673AB7;}

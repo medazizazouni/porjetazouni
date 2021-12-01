@@ -1,0 +1,14 @@
+<mat-card class="main">
+<h1>liste des utilisateur:</h1>
+<mat-card *ngFor='let u of listeutil'>
+   <p> {{u | json}} </p>
+</mat-card>
+<h1>liste des hotels:</h1>
+<mat-card *ngFor='let h of listehotel'>
+    <p>{{h | json}}</p>
+</mat-card>
+<h1>liste des reservation:</h1>
+<mat-card *ngFor='let r of listereserve'>
+    <p>{{r | json}}</p>
+</mat-card>
+</mat-card>
