@@ -28,7 +28,7 @@ export class ServjsonComponent implements OnInit {
   ngOnInit(): void {
     this.hotelservice.getListHotel().subscribe(data =>this.listehotel=data);
     this.listeutil=this.utilisateurservice.getUtilisateur();
-    this.listereserve=this.reservationservice.getListReservation();
+    this.reservationservice.getListReservation().subscribe(data=>this.listereserve=data);
   }
 
   openDialog(id:any): void {

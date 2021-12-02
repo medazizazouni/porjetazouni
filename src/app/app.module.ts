@@ -21,6 +21,7 @@ import { ModifformComponent } from './components/modifform/modifform.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchPipe } from './search.pipe';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { MatTableModule } from '@angular/material/table' ; 
 
 
 
@@ -50,7 +51,8 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
