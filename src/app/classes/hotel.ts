@@ -7,9 +7,7 @@ export class Hotel {
 
     promotion:boolean;
     description:string;
-    constructor(region:String,nom:string,prix:number,
-        photo:string,
-        promotion:boolean,id:number,description:string){
+    constructor(id:number,region:string,nom:string,prix:number,photo:string,promotion:boolean,description:string){
             this.description=description
             this.region=region;
             this.nom=nom;

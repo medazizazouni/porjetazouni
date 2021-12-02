@@ -10,6 +10,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 
@@ -25,7 +26,8 @@ const modules = [
   MatDatepickerModule,
   MatNativeDateModule,
  MatPaginatorModule,
- MatExpansionModule
+ MatExpansionModule,
+ MatCheckboxModule
 ];
 
 @NgModule({

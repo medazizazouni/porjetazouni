@@ -1,1 +1,42 @@
-<p>modifform works!</p>
+<h1>Formulaire de reservation</h1>
+<form  [formGroup]="modification" (ngSubmit)="onSubmitForm()" >
+    <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="region" formControlName="region" name='region' [value]="currentHotel.region">
+    </mat-form-field>
+  </p>  
+   
+    <p>
+      <mat-form-field>
+        <input type="text" matInput placeholder="nom de l'hotel" formControlName="nom"   name='nom' [value]="currentHotel.nom">
+      </mat-form-field>
+    </p>
+    
+    <p>
+      <mat-form-field>
+        <input type="number" matInput placeholder="prix" formControlName="prix"  name='prix' [value]="currentHotel.prix">
+      </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field>
+          <input type="text" matInput placeholder="photo" formControlName="photo"  name='photo' [value]="currentHotel.photo">
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field>
+          <input type="text" matInput placeholder="description" formControlName="description"  name='description' [value]="currentHotel.description">
+        </mat-form-field>
+      </p> 
+      <p>
+          <mat-checkbox formControlName="promotion" name='promotion' [checked]="currentHotel.promotion">promotion</mat-checkbox>
+
+    </p>
+    
+   
+    
+    <div class="button">
+      <button type="submit" mat-raised-button color="primary" [mat-dialog-close]="true" (click)="onSubmitForm()"  > modifier </button>
+    </div>
+    
+    </form>

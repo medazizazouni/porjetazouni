@@ -27,5 +27,13 @@ export class HotelService {
     
     return this.http.get<Hotel>(URL+'/'+id);
   }
+  public modifHotel(h:Hotel):Observable<Hotel>{
+    
+    return this.http.patch<Hotel>(URL+'/'+h.id,h);
+  }
+  public addHotel(h:Hotel):Observable<Hotel>{
+    
+    return this.http.post<Hotel>(URL,h);
+  }
   constructor(private http:HttpClient) { }
 }
