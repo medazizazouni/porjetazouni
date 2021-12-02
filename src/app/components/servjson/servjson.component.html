@@ -1,5 +1,5 @@
-<mat-card class="main">
-<h1>liste des utilisateur:</h1>
+<mat-card class="container">
+<!-- <h1>liste des utilisateur:</h1>
 <mat-card *ngFor='let u of listeutil'>
    <p> {{u | json}} </p>
 </mat-card>
@@ -10,5 +10,110 @@
 <h1>liste des reservation:</h1>
 <mat-card *ngFor='let r of listereserve'>
     <p>{{r | json}}</p>
-</mat-card>
+</mat-card> -->
+<mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Liste des utilisateurs"> 
+       
+         <table mat-table [dataSource]="listeutil" class="mat-elevation-z8">
+
+            
+            <ng-container matColumnDef="Identifiant">
+              <th mat-header-cell *matHeaderCellDef> Identifiant </th>
+              <td mat-cell *matCellDef="let element"> {{element.identifiant}} </td>
+            </ng-container>
+          
+           
+            <ng-container matColumnDef="Roles">
+              <th mat-header-cell *matHeaderCellDef> Roles </th>
+              <td mat-cell *matCellDef="let element"> {{element.role}} </td>
+            </ng-container>
+          
+           
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+    </mat-tab>
+    <mat-tab label="Liste des hotels">
+        <!-- <mat-card *ngFor='let h of listehotel'>
+            <p>{{h | json}}</p>
+        </mat-card> -->
+        <table mat-table [dataSource]="listehotel" class="mat-elevation-z8">
+
+            
+            <ng-container matColumnDef="Id">
+              <th mat-header-cell *matHeaderCellDef> Identifiant </th>
+              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+          
+           
+            <ng-container matColumnDef="Region">
+              <th mat-header-cell *matHeaderCellDef> Region </th>
+              <td mat-cell *matCellDef="let element"> {{element.region}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Nom">
+                <th mat-header-cell *matHeaderCellDef> Nom </th>
+                <td mat-cell *matCellDef="let element"> {{element.nom}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="Prix">
+                <th mat-header-cell *matHeaderCellDef> Prix </th>
+                <td mat-cell *matCellDef="let element"> {{element.prix}} </td>
+              </ng-container>
+              <ng-container matColumnDef="Promotion">
+                <th mat-header-cell *matHeaderCellDef> Promotion </th>
+                <td mat-cell *matCellDef="let element"> <ng-container *ngIf="element.promotion==true;else login">Promotion Valable</ng-container><ng-template #login><span style="text-decoration: line-through;">Promotion</span></ng-template> </td>
+              </ng-container>
+              <ng-container matColumnDef="Description">
+                <th mat-header-cell *matHeaderCellDef> Description </th>
+                <td mat-cell *matCellDef="let element"> <button (click)="openDialog(element.id)" mat-stroked-button> Read More </button> </td>
+              </ng-container>
+           
+          
+            <tr mat-header-row *matHeaderRowDef="HotelDisplayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: HotelDisplayedColumns;"></tr>
+          </table>
+    </mat-tab>
+    <mat-tab label="Liste des reservations">
+        <!-- <mat-card *ngFor='let r of listereserve'>
+            <p>{{r | json}}</p>
+        </mat-card> -->
+        <table mat-table [dataSource]="listereserve" class="mat-elevation-z8">
+
+            
+            <ng-container matColumnDef="Client">
+              <th mat-header-cell *matHeaderCellDef> Client </th>
+              <td mat-cell *matCellDef="let element"> {{element.client}} </td>
+            </ng-container>
+          
+           
+            <ng-container matColumnDef="Hotel">
+              <th mat-header-cell *matHeaderCellDef> Hotel </th>
+              <td mat-cell *matCellDef="let element"> {{element.hotel}} </td>
+            </ng-container>
+            <ng-container matColumnDef="DateDebut">
+                <th mat-header-cell *matHeaderCellDef> DateDebut </th>
+                <td mat-cell *matCellDef="let element"> {{element.dateDebut | date:'shortDate'}} </td>
+              </ng-container>
+              <ng-container matColumnDef="NbrJour">
+                <th mat-header-cell *matHeaderCellDef> NbrJour </th>
+                <td mat-cell *matCellDef="let element"> {{element.nbJour}} </td>
+              </ng-container>
+              <ng-container matColumnDef="NbrAdulte">
+                <th mat-header-cell *matHeaderCellDef> NbrAdulte </th>
+                <td mat-cell *matCellDef="let element"> {{element.nbAdulte}} </td>
+              </ng-container>
+              <ng-container matColumnDef="NbrEnfant">
+                <th mat-header-cell *matHeaderCellDef> NbrEnfant </th>
+                <td mat-cell *matCellDef="let element"> {{element.nbEnfant}} </td>
+              </ng-container>
+          
+           
+          
+            <tr mat-header-row *matHeaderRowDef="ReservationDisplayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: ReservationDisplayedColumns;"></tr>
+          </table>
+    </mat-tab>
+  </mat-tab-group>
 </mat-card>

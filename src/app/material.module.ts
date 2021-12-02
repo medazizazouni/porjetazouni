@@ -11,6 +11,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatTabsModule} from '@angular/material/tabs';
+
 
 
 
@@ -27,7 +29,8 @@ const modules = [
   MatNativeDateModule,
  MatPaginatorModule,
  MatExpansionModule,
- MatCheckboxModule
+ MatCheckboxModule,
+ MatTabsModule
 ];
 
 @NgModule({
