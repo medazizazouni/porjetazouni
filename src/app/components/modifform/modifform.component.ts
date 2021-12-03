@@ -14,7 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ModifformComponent implements OnInit {
   modification:FormGroup | any;
-  modifEnCours:Hotel=new Hotel(0,"","",0,"",false,"");
+  modifEnCours:Hotel=this.data.hotel;
   
   constructor(private hotelserv:HotelService,@Inject(MAT_DIALOG_DATA) public data: any,private fb:FormBuilder,private snackbar:MatSnackBar) { }
   onSubmitForm(){
@@ -25,7 +25,8 @@ export class ModifformComponent implements OnInit {
     this.modification.get('photo').value,
     this.modification.get('promotion').value,
     this.modification.get('description').value,);
-    this.hotelserv.modifHotel(this.modifEnCours).subscribe(data=>console.log(this.modifEnCours)); }
+    this.hotelserv.modifHotel(this.modifEnCours).subscribe(data=>console.log(this.modifEnCours)); 
+    window.location.reload();}
 
     openSnackBar() {
       this.snackbar.open("modification faites avec succes!","",{

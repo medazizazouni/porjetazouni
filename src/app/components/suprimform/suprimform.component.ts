@@ -15,7 +15,8 @@ export class SuprimformComponent implements OnInit {
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,private hotelserv:HotelService) { }
 
   supprimer(h:Hotel){
-    this.hotelserv.supprHotel(h).subscribe(data=>console.log("hotel supprimer"))
+    this.hotelserv.supprHotel(h).subscribe(data=>console.log("hotel supprimer"));
+    window.location.reload();
   }
 
   ngOnInit(): void {

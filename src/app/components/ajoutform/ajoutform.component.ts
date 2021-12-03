@@ -22,7 +22,8 @@ currentHotel:Hotel=new Hotel(0,"","",0,"",false,"");
     this.ajout.get('photo').value,
     this.ajout.get('promotion').value,
     this.ajout.get('description').value,);
-    this.hotelserve.addHotel(this.currentHotel).subscribe(data=>this.listHotel.push(data));} 
+    this.hotelserve.addHotel(this.currentHotel).subscribe(data=>this.listHotel.push(data));
+    window.location.reload();} 
 
     openSnackBar() {
       this.snackbar.open("modification faites avec succes!","",{
