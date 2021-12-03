@@ -18,11 +18,14 @@
       </mat-form-field>
     </p>
 
-    <p>
-        <mat-form-field>
-          <input type="text" matInput placeholder="photo" formControlName="photo"  name='photo' >
-        </mat-form-field>
-      </p>
+    <div class="file-input " >
+      <input type="file"  id="file" [(ngModel)]="currentHotel.photo" name="img"  (change)="imageselect($event)" accept=".jpg,.jpeg,.png"  class="file">
+      <label for="file">
+         choisire l'image
+        <p class="file-name"></p>
+      </label>
+    </div>
+    <img [src]="currentHotel.photo" style="max-height: 200px;" >
       <p>
         <mat-form-field>
           <input type="text" matInput placeholder="description" formControlName="description"  name='description' >
@@ -36,7 +39,7 @@
    
     
     <div class="button">
-      <button type="submit" mat-raised-button color="primary" [mat-dialog-close]="true" (click)="openSnackBar()" [disabled]="ajout.invalid && ajout.touched" > ajouter </button>
+      <button type="submit" mat-raised-button color="primary" [mat-dialog-close]="true" (click)="openSnackBar()"  > ajouter </button>
     </div>
     
     </form>

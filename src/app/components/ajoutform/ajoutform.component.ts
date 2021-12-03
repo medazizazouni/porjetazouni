@@ -13,13 +13,14 @@ export class AjoutformComponent implements OnInit {
  listHotel:Hotel[]=[]; 
 ajout:FormGroup |any;
 currentHotel:Hotel=new Hotel(0,"","",0,"",false,"");
+photo:any;
   constructor(private fb:FormBuilder,private snackbar:MatSnackBar,private hotelserve:HotelService) { }
   onSubmitForm(){
     this.currentHotel=new Hotel(this.listHotel.length+1,
     this.ajout.get('region').value,
     this.ajout.get('nom').value,
     this.ajout.get('prix').value,
-    this.ajout.get('photo').value,
+    this.photo,
     this.ajout.get('promotion').value,
     this.ajout.get('description').value,);
     this.hotelserve.addHotel(this.currentHotel).subscribe(data=>this.listHotel.push(data));
@@ -30,7 +31,15 @@ currentHotel:Hotel=new Hotel(0,"","",0,"",false,"");
         duration: 600
       });
     } 
-
+    imageselect(event:any){
+      let file=event.target.files[0];
+      let reader= new FileReader();
+      console.log(reader.readAsDataURL(file));
+      reader.onload=(e)=>{
+        this.photo=reader.result?.toString();
+        this.ajout.photo=this.photo;
+      }
+    }
   ngOnInit(): void {
     
     this.hotelserve.getListHotel().subscribe(data=>this.listHotel=data);

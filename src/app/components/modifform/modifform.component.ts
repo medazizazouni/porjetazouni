@@ -15,24 +15,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ModifformComponent implements OnInit {
   modification:FormGroup | any;
   modifEnCours:Hotel=this.data.hotel;
-  
+  photo:any;
   constructor(private hotelserv:HotelService,@Inject(MAT_DIALOG_DATA) public data: any,private fb:FormBuilder,private snackbar:MatSnackBar) { }
-  onSubmitForm(){
-    this.modifEnCours=new Hotel(this.data.hotel.id,
-    this.modification.get('region').value,
-    this.modification.get('nom').value,
-    this.modification.get('prix').value,
-    this.modification.get('photo').value,
-    this.modification.get('promotion').value,
-    this.modification.get('description').value,);
-    this.hotelserv.modifHotel(this.modifEnCours).subscribe(data=>console.log(this.modifEnCours)); 
-    window.location.reload();}
-
-    openSnackBar() {
-      this.snackbar.open("modification faites avec succes!","",{
-        duration: 600
-      });
-    }  
+  
 
   ngOnInit(): void {
     
@@ -41,11 +26,40 @@ export class ModifformComponent implements OnInit {
       region:[this.modifEnCours.region,Validators.required],
       nom:[this.modifEnCours.nom,Validators.required],
       prix:[this.modifEnCours.prix,Validators.required],
-      photo:[this.modifEnCours.photo,Validators.required],
+      // photo:[this.modifEnCours.photo,Validators.required],
       description:[this.modifEnCours.description,Validators.required],
       promotion:[this.modifEnCours.promotion,Validators.required],
     })
     
   }
+  imageselect(event:any){
+    let file=event.target.files[0];
+    let reader= new FileReader();
+    console.log(reader.readAsDataURL(file));
+    reader.onload=(e)=>{
+      this.photo=reader.result?.toString();
+      this.modification.photo=this.photo;
+    }
+    
+    
+  }
+  onSubmitForm(){
+    this.modifEnCours=new Hotel(this.data.hotel.id,
+    this.modification.get('region').value,
+    this.modification.get('nom').value,
+    this.modification.get('prix').value,
+    this.photo,
+    // this.modification.get('photo').value,
+    this.modification.get('promotion').value,
+    this.modification.get('description').value,);
+    this.hotelserv.modifHotel(this.modifEnCours).subscribe(data=>{console.log(this.modifEnCours)
+    this.openSnackBar();
+    window.location.reload();
+  },err=>{console.log(err)}); }
 
+    openSnackBar() {
+      this.snackbar.open("modification faites avec succes!","",{
+        duration: 600
+      });
+    }  
 }

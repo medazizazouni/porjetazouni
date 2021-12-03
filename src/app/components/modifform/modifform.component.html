@@ -1,3 +1,4 @@
+
 <h1>Formulaire de reservation</h1>
 <form  [formGroup]="modification" (ngSubmit)="onSubmitForm()" >
     <p>
@@ -18,11 +19,23 @@
       </mat-form-field>
     </p>
 
-    <p>
-        <mat-form-field>
+  
+        <!-- <mat-form-field>
           <input type="text" matInput placeholder="photo" formControlName="photo"  name='photo' [value]="modifEnCours.photo">
-        </mat-form-field>
-      </p>
+        </mat-form-field> -->
+        <!-- <button type="button" mat-raised-button (click)="fileInput.click()">Choose File</button>
+          <input hidden (change)="onFileSelected($event)" #fileInput type="file" id="file" placeholder="photo" accept=".jpg,.jpeg,.png" formControlName="photo"  name='photo' [value]="modifEnCours.photo"> -->
+          <div class="file-input " >
+            <input type="file"  id="file" [(ngModel)]="modifEnCours.photo" name="img"  (change)="imageselect($event)" accept=".jpg,.jpeg,.png"  class="file">
+            <label for="file">
+               choisir l'image
+              <p class="file-name"></p>
+            </label>
+          </div>
+          <img [src]="modifEnCours.photo" style="max-height: 200px;" >
+
+      
+        
       <p>
         <mat-form-field>
           <input type="text" matInput placeholder="description" formControlName="description"  name='description' [value]="modifEnCours.description">
