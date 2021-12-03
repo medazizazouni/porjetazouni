@@ -29,11 +29,15 @@ export class HotelService {
   }
   public modifHotel(h:Hotel):Observable<Hotel>{
     
-    return this.http.patch<Hotel>(URL+'/'+h.id,h);
+    return this.http.put<Hotel>(URL+'/'+h.id,h);
   }
   public addHotel(h:Hotel):Observable<Hotel>{
     
     return this.http.post<Hotel>(URL,h);
+  }
+  public supprHotel(h:Hotel):Observable<Hotel>{
+    
+    return this.http.delete<Hotel>(URL+'/'+h.id);
   }
   constructor(private http:HttpClient) { }
 }

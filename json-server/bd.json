@@ -13,10 +13,11 @@
       "id": 2,
       "region": "tunis",
       "nom": "sheraton",
-      "prix": 150,
+      "prix": "150",
       "photo": "assets/hotels/sheraton.jpg",
-      "promotion": false,
+      "promotion": "false",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
     },
     {
       "id": 3,
@@ -71,15 +72,6 @@
       "photo": "assets/hotels/olivier.jpg",
       "promotion": false,
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    },
-    {
-      "description": "sqdq",
-      "region": "aziz",
-      "nom": "aziz",
-      "prix": 450,
-      "photo": "assets/tunisie.jpg",
-      "promotion": true,
-      "id": 9
     }
   ],
   "utilisateur": [

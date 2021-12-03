@@ -4,6 +4,7 @@ import { HotelService } from 'src/app/services/hotel.service';
 import {MatDialog, } from '@angular/material/dialog';
 import { AjoutformComponent } from '../ajoutform/ajoutform.component';
 import { ModifformComponent } from '../modifform/modifform.component';
+import { SuprimformComponent } from '../suprimform/suprimform.component';
 
 @Component({
   selector: 'app-modif-ajout',
@@ -40,6 +41,16 @@ export class ModifAjoutComponent implements OnInit {
         console.log('The dialog was closed');
       
       });}
+
+      supprimer(h:Hotel): void {
+        const dialogRef = this.dialog.open(SuprimformComponent, {
+          width: '500px',
+          data: {hotel: h}
+           });
+        dialogRef.afterClosed().subscribe(result => {
+          console.log('The dialog was closed');
+        
+        });}  
 
   ngOnInit(): void {
     this.hotelservice.getListHotel().subscribe(data =>this.hotel=data);

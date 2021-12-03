@@ -14,8 +14,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ModifformComponent implements OnInit {
   modification:FormGroup | any;
-  modifEnCours:Hotel=new Hotel(0,"","",0,"",false,"");;
-  currentHotel:Hotel=new Hotel(0,"","",0,"",false,"");
+  modifEnCours:Hotel=new Hotel(0,"","",0,"",false,"");
+  
   constructor(private hotelserv:HotelService,@Inject(MAT_DIALOG_DATA) public data: any,private fb:FormBuilder,private snackbar:MatSnackBar) { }
   onSubmitForm(){
     this.modifEnCours=new Hotel(this.data.hotel.id,
@@ -35,14 +35,14 @@ export class ModifformComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.hotelserv.getOneHotel(this.data.hotel.id).subscribe(data=>{this.currentHotel=data;console.log(this.currentHotel)});
+    this.hotelserv.getOneHotel(this.data.hotel.id).subscribe(data=>{this.modifEnCours=data;console.log(this.modifEnCours)});
     this.modification=this.fb.group({
-      region:[''],
-      nom:[''],
-      prix:[''],
-      photo:[''],
-      description:[''],
-      promotion:[''],
+      region:[this.modifEnCours.region,Validators.required],
+      nom:[this.modifEnCours.nom,Validators.required],
+      prix:[this.modifEnCours.prix,Validators.required],
+      photo:[this.modifEnCours.photo,Validators.required],
+      description:[this.modifEnCours.description,Validators.required],
+      promotion:[this.modifEnCours.promotion,Validators.required],
     })
     
   }

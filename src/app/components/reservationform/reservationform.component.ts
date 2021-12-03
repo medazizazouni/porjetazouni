@@ -26,6 +26,7 @@ export class ReservationformComponent implements OnInit {
   jour:number=0;
   enfant:number = 0;
   adult:number=0;
+  today:String=new Date().toLocaleDateString();
   constructor(private utilisateur:AuthServiceService,private hotelserv:HotelService,private reservservice:ReservationService,
   @Inject(MAT_DIALOG_DATA) public data: any,
   private fb:FormBuilder,
@@ -83,12 +84,6 @@ export class ReservationformComponent implements OnInit {
     this.nom=this.data.nom.nom;
     console.log(this.data.nom)
     this.currentHotel=this.data.nom;
-    // this.hotelserv.getListHotel().subscribe(data =>this.hotel=data);
-    // this.hotel.forEach(x=>{
-    //   if(x.nom==this.nom){
-    //     this.currentHotel=x;
-    //   }
-    // })
     this.nomutil=this.utilisateur.getUser();
     this.reservation=this.fb.group({
       dateDebut:['',Validators.required],

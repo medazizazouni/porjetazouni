@@ -12,7 +12,7 @@
 
    <mat-form-field appearance="fill">
     <mat-label>date de reservation</mat-label>
-    <input  matInput [matDatepicker]="picker" formControlName="dateDebut">
+    <input  matInput [matDatepicker]="picker"  [min]="today" formControlName="dateDebut">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
