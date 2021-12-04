@@ -22,7 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchPipe } from './search.pipe';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { MatTableModule } from '@angular/material/table';
-import { SuprimformComponent } from './components/suprimform/suprimform.component' ; 
+import { SuprimformComponent } from './components/suprimform/suprimform.component';
+import { VosreservationComponent } from './components/vosreservation/vosreservation.component';
+ 
 
 
 
@@ -44,6 +46,8 @@ import { SuprimformComponent } from './components/suprimform/suprimform.componen
         ModifformComponent,
         AboutusComponent,
         SuprimformComponent,
+        VosreservationComponent,
+       
   ],
   imports: [
     BrowserModule,

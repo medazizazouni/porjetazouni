@@ -1,17 +1,19 @@
 export class Reservation {
+    id:number;
     client:String;
     hotel:string;
-    dateDebut:Date;
+    DateDebut:Date;
     nbjour:number;
-    nbAdulte:number;
-    nbEnfant:number;
+    nbadult:number;
+    nbenfant:number;
     
-    constructor(client:String,hotel:string,dateDebut:Date,nbAdulte:number,nbEnfant:number,nbjour:number){
+    constructor(id:number,client:String,hotel:string,DateDebut:Date,nbadult:number,nbenfant:number,nbjour:number){
+        this.id=id;
         this.client=client;
         this.hotel=hotel;
-        this.dateDebut=dateDebut;
-        this.nbAdulte=nbAdulte;
-        this.nbEnfant=nbEnfant;
+        this.DateDebut=DateDebut;
+        this.nbadult=nbadult;
+        this.nbenfant=nbenfant;
         this.nbjour=nbjour;
         
         }

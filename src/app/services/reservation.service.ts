@@ -15,6 +15,12 @@ export class ReservationService {
   public getListReservation():Observable<Reservation[]>{
     return this.http.get<Reservation[]>(URL);
   }
+  public getOneReservation(r:Reservation):Observable<Reservation>{
+    return this.http.get<Reservation>(URL+'/'+r.id);
+  }
+  public supprReservation(r:Reservation):Observable<Reservation[]>{
+    return this.http.delete<Reservation[]>(URL+'/'+r.id);
+  }
   public addReservation(r:Reservation):Observable<Reservation>{
     return this.http.post<Reservation>(URL,r);
   }

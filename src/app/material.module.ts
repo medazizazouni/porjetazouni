@@ -12,6 +12,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 
@@ -30,7 +31,8 @@ const modules = [
  MatPaginatorModule,
  MatExpansionModule,
  MatCheckboxModule,
- MatTabsModule
+ MatTabsModule,
+ MatBadgeModule
 ];
 
 @NgModule({

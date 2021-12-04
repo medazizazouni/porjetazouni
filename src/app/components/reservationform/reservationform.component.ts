@@ -27,6 +27,7 @@ export class ReservationformComponent implements OnInit {
   enfant:number = 0;
   adult:number=0;
   today:String=new Date().toLocaleDateString();
+  listreserv:Reservation[]=[];
   constructor(private utilisateur:AuthServiceService,private hotelserv:HotelService,private reservservice:ReservationService,
   @Inject(MAT_DIALOG_DATA) public data: any,
   private fb:FormBuilder,
@@ -70,7 +71,8 @@ export class ReservationformComponent implements OnInit {
     }  
   }
    onSubmitForm(){
-    this.currentReservation=new Reservation(this.nomutil.identifiant,this.nom,
+    this.currentReservation=new Reservation(this.listreserv.length+1,
+    this.nomutil.identifiant,this.nom,
     this.reservation.get('dateDebut').value,
     this.reservation.get('nbadulte').value,
     this.reservation.get('nbenfant').value,
@@ -81,6 +83,7 @@ export class ReservationformComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.reservservice.getListReservation().subscribe(data=>this.listreserv=data);
     this.nom=this.data.nom.nom;
     console.log(this.data.nom)
     this.currentHotel=this.data.nom;

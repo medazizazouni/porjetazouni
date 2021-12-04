@@ -8,6 +8,7 @@ import { ReservationformComponent } from './components/reservationform/reservati
 import { ServjsonComponent } from './components/servjson/servjson.component';
 import { ModifAjoutComponent } from './components/modif-ajout/modif-ajout.component';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { VosreservationComponent } from './components/vosreservation/vosreservation.component';
 
 const routes: Routes = [{path:'listehotel' , component:ListehotelComponent},
 {path:'login',component:LoginComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [{path:'listehotel' , component:ListehotelComponent},
 {path:'reservation/:nom',component:ReservationformComponent},
 {path:'modifajout' , component:ModifAjoutComponent},
 {path:'acceuil' , component:AboutusComponent},
+{path:'vosreservation' , component:VosreservationComponent},
 {path:'' , component:AboutusComponent},
 
 ];
