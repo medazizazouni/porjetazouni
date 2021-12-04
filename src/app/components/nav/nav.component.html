@@ -14,7 +14,7 @@
                 <a mat-button  routerLinkActive="router-link-active"  [routerLink]="['/listehotel']">Catalogue </a>
               </li>
               <li class="nav-item">
-                <a  mat-button *ngIf="userrole =='owner'" routerLinkActive="router-link-active" [routerLink]="['/servejson']">base de donnée</a>
+                <a  mat-button *ngIf="userrole != 'user'" routerLinkActive="router-link-active" [routerLink]="['/servejson']">base de donnée</a>
               </li>
               <li class="nav-item">
                 <a mat-button  *ngIf="userrole !='user'" routerLinkActive="router-link-active" [routerLink]="['/modifajout']">Modifier/Ajouter</a>
