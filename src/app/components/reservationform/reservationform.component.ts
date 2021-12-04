@@ -90,9 +90,9 @@ export class ReservationformComponent implements OnInit {
     this.nomutil=this.utilisateur.getUser();
     this.reservation=this.fb.group({
       dateDebut:['',Validators.required],
-      nbjour:['',Validators.required],
-      nbenfant:['',Validators.required],
-      nbadulte:['',Validators.required],
+      nbjour:['',Validators.min(1)],
+      nbenfant:['',Validators.min(0)],
+      nbadulte:['',Validators.min(1)],
     })
   
   }
