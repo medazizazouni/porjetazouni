@@ -3,13 +3,13 @@
 <mat-card class="d-flex flex-row flex-wrap main">
 <ng-container *ngFor='let r of listereserve'>
 <mat-card *ngIf='currentuser.identifiant == r.client' class="single">
-  <ul>
-    <li>nom :{{r.client}}</li>
-    <li>hotel:{{r.hotel}}</li>
-    <li>date du premier jour:{{r.DateDebut}}</li>
-    <li>reserver pour {{r.nbjour}} jours</li>
-    <li>nombre d'adultes:{{r.nbadult}}</li>
-    <li>nombre d'enfants:{{r.nbenfant}}</li>
+  <ul class="list-group">
+    <li class="list-group-item">nom :{{r.client}}</li>
+    <li class="list-group-item">hotel:{{r.hotel}}</li>
+    <li class="list-group-item">date du premier jour:{{r.DateDebut}}</li>
+    <li class="list-group-item">reserver pour {{r.nbjour}} jours</li>
+    <li class="list-group-item">nombre d'adultes:{{r.nbadult}}</li>
+    <li class="list-group-item">nombre d'enfants:{{r.nbenfant}}</li>
   </ul>
   <button color="warn" mat-stroked-button (click)="suprreservation(r)"> annuler </button>
 </mat-card>
